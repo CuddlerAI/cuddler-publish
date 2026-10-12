@@ -1,0 +1,20 @@
+{
+  "name": "cuddler-publish",
+  "interface": {
+    "displayName": "Cuddler Publish"
+  },
+  "plugins": [
+    {
+      "name": "cuddler-publish",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creativity"
+    }
+  ]
+}

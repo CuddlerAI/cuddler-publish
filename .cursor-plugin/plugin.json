@@ -1,0 +1,24 @@
+{
+  "name": "cuddler-publish",
+  "displayName": "Cuddler Publish",
+  "version": "0.1.0",
+  "description": "Publish a finished video you made with any tool to your own Cuddler profile from your coding agent: private by default, only after you confirm the title, visibility and your rights.",
+  "author": {
+    "name": "Cuddler"
+  },
+  "homepage": "https://cuddler.ai/mcp",
+  "repository": "https://github.com/CuddlerAI/cuddler-publish",
+  "license": "MIT",
+  "keywords": [
+    "cuddler",
+    "publish",
+    "video",
+    "ai-video",
+    "creator",
+    "mcp",
+    "agent-skills"
+  ],
+  "logo": "./assets/logo.png",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

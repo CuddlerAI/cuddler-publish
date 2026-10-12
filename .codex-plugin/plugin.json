@@ -1,0 +1,45 @@
+{
+  "name": "cuddler-publish",
+  "version": "0.1.0",
+  "description": "Publish a finished video you made with any tool to your own Cuddler profile from your coding agent: private by default, only after you confirm the title, visibility and your rights.",
+  "author": {
+    "name": "Cuddler",
+    "url": "https://cuddler.ai"
+  },
+  "homepage": "https://cuddler.ai/mcp",
+  "repository": "https://github.com/CuddlerAI/cuddler-publish",
+  "license": "MIT",
+  "keywords": [
+    "cuddler",
+    "publish",
+    "video",
+    "ai-video",
+    "creator",
+    "mcp",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Cuddler Publish",
+    "shortDescription": "Publish your videos to Cuddler",
+    "longDescription": "Publish a finished video to your own Cuddler profile from your coding agent, whatever tool made it, including the Cuddler Platform API. Sign in once in the browser. Before anything is uploaded the agent shows you the title, description and visibility and asks you to confirm that you own the rights to the video and that it follows Cuddler's content policy. Videos are private unless you choose public, and a public video appears to others only after it passes Cuddler's checks. Publishing from AI assistants is rolling out and may not be enabled for your account yet.",
+    "developerName": "Cuddler",
+    "category": "Creativity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://cuddler.ai/mcp",
+    "supportURL": "https://cuddler.ai/support",
+    "privacyPolicyURL": "https://cuddler.ai/privacy",
+    "termsOfServiceURL": "https://cuddler.ai/terms",
+    "defaultPrompt": [
+      "Publish ./out/rain-boat.mp4 to my Cuddler, private",
+      "Post this clip to my Cuddler profile as public",
+      "Is the video I published to Cuddler live yet?"
+    ],
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
+}
