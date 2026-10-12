@@ -73,8 +73,8 @@ A clear yes to both counts. A yes with changes ("yes, but call it …", "make it
 ## Step 5 — Upload and publish (after the yes)
 
 1. `start_upload` with `contentType` (`video/mp4`, `video/quicktime` or `video/webm`) and the exact `bytes`.
-2. PUT the raw bytes to the returned `url` with exactly the returned `headers`: `curl -fsS -X PUT -H "content-type: …" -H "content-length: …" -H "cache-control: …" --data-binary @<file> "<url>"`. The link lasts about 10 minutes; if it expired, start again at 1.
-3. `finish_upload` with the `uploadId`. It answers `video` (length, width, height); nothing is published yet.
+2. PUT the raw bytes to the returned `url` with exactly the returned `headers` (one `-H "<name>: <value>"` per header): `curl -fsS -X PUT -H "content-type: …" -H "content-length: …" --data-binary @<file> "<url>"`. The link lasts about 10 minutes; if it expired, start again at 1.
+3. `finish_upload` with the `uploadId`. Cuddler keeps a copy without location and other metadata, deletes the original, and answers `video` (length, width, height); nothing is published yet. An upload that is never published expires after 7 days.
 4. `publish_video` with `uploadId`, the approved `title`, `description` and `visibility`, and `rightsConfirmed: true`.
 
 ## Step 6 — Report
@@ -112,7 +112,9 @@ If the user is in Cuddler's Creator Partner Program, remind them to follow the p
 | `video_unreadable` | Not a playable video file | Ask for a standard MP4 export. |
 | `upload_missing` | The PUT didn't land or its link expired | Start again at Step 5.1 with the same confirmed post. |
 | `CONTENT_BLOCKED` | The title or description breaks the content policy; nothing was created | Tell the user. A new title or description is a new confirmation; never rephrase to slip the same content through. |
-| `publish_daily_limit` | This account published as many videos today as Cuddler allows from assistants | Stop; it resets at 00:00 UTC, or they can publish in the Cuddler app. |
+| `publish_daily_limit` / `upload_daily_limit` | This account published or uploaded as many videos today as Cuddler allows from assistants | Stop; it resets at 00:00 UTC, or they can publish in the Cuddler app. |
+| `publish_in_progress` | Another publish from this account, or of this upload, is still running | Wait the `Retry-After` seconds, then repeat the identical call. |
+| `publish_state_unavailable` / `video_upload_unavailable` | Cuddler couldn't check or store the upload just now | Wait a little and repeat the identical call; nothing was published. |
 | `already_published` | This upload was published once and that video was deleted | Don't bring it back; publish again only if the user asks, as a new upload and confirmation. |
 | A timeout or no answer from `publish_video` | Unknown outcome | Repeat the identical call (Hard rule 5). |
 

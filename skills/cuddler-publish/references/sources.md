@@ -29,6 +29,6 @@ Re-check the new file (Step 3) and confirm the post again with the new file befo
 
 ## What Cuddler does with the file
 
-- `finish_upload` keeps a copy under the user's own account and checks that it plays and is within the limits. Nothing is published yet.
-- `publish_video` runs the same steps as an upload in the Cuddler app: the title and description are checked against the content policy, the video is prepared for playback, and a public request is checked again by looking at frames across the video before anyone else can see it.
+- The PUT goes to Cuddler's private storage. `finish_upload` checks that the file plays and is within the limits, keeps a copy without location, dates, comments and other embedded metadata, and deletes the original. Nothing is published yet; an upload never published is deleted after 7 days.
+- `publish_video` runs the same steps as an upload in the Cuddler app: the title and description are checked against the content policy, the video is prepared for playback, and frames across the video are checked before anyone else can see it (a private video is checked too, so a later publish in the app starts from that result).
 - A video that fails a check stays private. The user can see it, and delete it, in the Cuddler app.

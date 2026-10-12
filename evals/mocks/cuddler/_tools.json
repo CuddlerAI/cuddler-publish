@@ -604,7 +604,7 @@
     },
     {
       "name": "finish_upload",
-      "description": "Step 2, after the PUT. A reference image is cleaned (EXIF and location data stripped, size bounded), checked against Cuddler's content rules and returned as `reference.url`, for `references` when pricing or creating an image or a video; a refused image is deleted. A video is checked to be a playable file within the limits and returned as `video`, ready for publish_video (nothing is published yet). Safe to repeat with the same `uploadId`. Free.",
+      "description": "Step 2, after the PUT. A reference image is cleaned (EXIF and location data stripped, size bounded), checked against Cuddler's content rules and returned as `reference.url`, for `references` when pricing or creating an image or a video; a refused image is deleted. A video is checked to be a playable file within the limits; Cuddler keeps a copy without location and other metadata, deletes the original, and returns `video`, ready for publish_video (nothing is published yet; an unpublished upload expires after 7 days). Safe to repeat with the same `uploadId`. Free.",
       "inputSchema": {
         "type": "object",
         "properties": {

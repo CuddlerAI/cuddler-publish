@@ -61,7 +61,8 @@ Already using the [Cuddler skills](https://github.com/CuddlerAI/skills)? You are
 
 ## Privacy and safety
 
-- **What is uploaded:** only the one video file you confirmed, with the title and description you approved, to your own Cuddler account. Nothing else on your machine is read or sent. The file goes straight from your machine to Cuddler's storage over a signed link that expires after about 10 minutes.
+- **What is uploaded:** only the one video file you confirmed, with the title and description you approved, to your own Cuddler account. Nothing else on your machine is read or sent. The file goes straight from your machine to Cuddler's private storage over a signed link that expires after about 10 minutes.
+- **Embedded metadata is removed:** Cuddler keeps a copy of your video without the location, dates, comments and other metadata phones and cameras embed, and deletes the file you sent. Only that cleaned copy is ever shown. An upload you never publish is deleted after 7 days.
 - **Who sees it:** you, until you choose public. A public video is checked by Cuddler (its title and description, and frames across the video) before anyone else can see it; a video that fails stays private. You can delete it any time in the Cuddler app.
 - **Your rights:** you confirm before every upload that you own the rights to the video and everything in it (footage, music, voices, characters) and that it follows Cuddler's [content policy](https://cuddler.ai/terms). The skill never answers that for you.
 - **AI content:** if the video was made with AI, say so in its description and wherever you share it.

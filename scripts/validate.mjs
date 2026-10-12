@@ -31,6 +31,10 @@ export const RULE_PHRASES = [
 /** `details.reason` values the publishing tools answer with; the skill may name them. */
 export const REASON_CODES = [
   "publish_daily_limit",
+  "publish_in_progress",
+  "publish_state_unavailable",
+  "upload_daily_limit",
+  "video_upload_unavailable",
   "video_too_large",
   "video_too_long",
   "video_unreadable",
